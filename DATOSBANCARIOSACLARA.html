@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos Bancarios</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Datos Bancarios para Transferencia</h2>
+        <p><strong>Nombre:</strong> María Isabel Alliende Álvarez</p>
+        <p><strong>RUT</strong> 21.181.604-K</p>
+        <p><strong>Banco</strong> Banco Bice</p>
+        <p><strong>Tipo de cuenta:</strong> Cuenta Corriente</p>
+        <p><strong>Número de cuenta</strong> 02782677</p>
+        <p><strong>Correo:</strong> proyectoaclara@gmail.com</p>
+        <button class="btn" onclick="copyToClipboard()">Copiar Información</button>
+    </div>
+
+    <script>
+        function copyToClipboard() {
+            const text = `
+Nombre: Juan Pérez
+Banco: Banco Ejemplo
+Número de cuenta: 123456789
+Tipo de cuenta: Cuenta Corriente
+RUT: 12.345.678-9
+Correo: juan.perez@example.com`;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Información copiada al portapapeles');
+            }).catch(err => {
+                console.error('Error al copiar: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
